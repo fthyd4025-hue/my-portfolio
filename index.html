@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>عبدالله فتحي | الملف الشخصي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1320;
+      --surface: #111c2e;
+      --surface-2: #17263d;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #0284c7;
+      --border: rgba(148, 163, 184, 0.16);
+    }
+    body.light {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef4fa;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #1f5a7a;
+      --accent-2: #143d54;
+      --border: rgba(15, 23, 42, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: radial-gradient(circle at top right, rgba(56,189,248,0.12), transparent 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      transition: 0.25s ease;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 920px; margin: auto; padding: 28px 18px 60px; }
+    .topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 22px; gap: 12px; flex-wrap: wrap;
+    }
+    .tag {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; color: var(--accent); font-weight: 700;
+    }
+    .btn {
+      border: none; cursor: pointer; font-family: inherit; font-weight: 700;
+      padding: 10px 18px; border-radius: 12px; transition: 0.2s ease;
+    }
+    .btn-ghost {
+      background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .hero {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 24px; padding: 34px 26px; margin-bottom: 20px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.22);
+    }
+    .hero h1 { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 10px; }
+    .hero p { color: var(--muted); font-size: 1.02rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 22px;
+    }
+    .card h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--accent); }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill {
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 8px 14px; border-radius: 12px; font-size: 0.92rem; font-weight: 600;
+    }
+    .contact-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .email-box {
+      background: var(--surface-2); padding: 10px 14px; border-radius: 10px;
+      border: 1px solid var(--border); font-weight: 700; font-size: 0.95rem;
+    }
+    .copied { color: #22c55e; font-size: 0.88rem; font-weight: 700; margin-top: 8px; min-height: 22px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <span class="tag">الملف الشخصي والسيرة</span>
+      <button class="btn btn-ghost" onclick="document.body.classList.toggle('light')">تبديل المظهر</button>
+    </div>
+
+    <section class="hero">
+      <h1>عبدالله فتحي</h1>
+      <p>
+        مهتم بأمن المعلومات والشبكات وتطوير تطبيقات الويب وبناء وتجهيز الأنظمة التقنية بكفاءة عالية.
+        أعمل على تحويل الأفكار البرمجية والتقنية إلى مشاريع عملية سريعة الاستجابة وسهلة الاستخدام.
+        أحرص على الدقة في التنفيذ، ووضوح الواجهات، واستقرار الأداء تحت مختلف الظروف.
+      </p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>المهارات الأساسية</h2>
+        <div class="skills">
+          <span class="skill">أمن المعلومات والشبكات</span>
+          <span class="skill">HTML5 &amp; CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">تجميع واختبار الحواسيب</span>
+          <span class="skill">إدارة الأنظمة ولينكس</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>التواصل المباشر</h2>
+        <p style="color: var(--muted); font-size: 0.95rem;">للتواصل أو الاستفسار عبر البريد الإلكتروني:</p>
+        <div class="contact-row">
+          <span class="email-box" id="emailText">abdullah.fathi@example.com</span>
+          <button class="btn btn-primary" onclick="copyEmail()">fthyb4025@gmail.com</button>
+        </div>
+        <div class="copied" id="copyStatus"></div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function copyEmail() {
+      const txt = document.getElementById('emailText').innerText;
+      navigator.clipboard?.writeText(txt);
+      document.getElementById('copyStatus').innerText = 'تم نسخ البريد الإلكتروني بنجاح';
+    }
+  </script>
+</body>
+</html>
